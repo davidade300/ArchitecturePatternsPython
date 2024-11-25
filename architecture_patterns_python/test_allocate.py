@@ -1,7 +1,7 @@
 import pytest
 from datetime import date, timedelta
 
-from architecture_patterns_python.model import (
+from .model import (
     Batch,
     OrderLine,
     OutOfStock,

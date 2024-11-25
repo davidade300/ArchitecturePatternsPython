@@ -10,7 +10,7 @@ Reference = NewType("Reference", str)
 # Whenever we have a business concept that has data but no identity, we often choose to
 # represent it using the "Value Object Pattern". A Value Object is any domain object that
 # is uniquely identified by the data it holds; we usually make them immutable:
-@dataclass(frozen=True)
+@dataclass  # (frozen=True)
 class OrderLine:
     """
     A Value object can be defined as:

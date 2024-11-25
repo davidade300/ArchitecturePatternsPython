@@ -1,6 +1,10 @@
 from sqlalchemy import Column, Integer, MetaData, String, Table
-from sqlalchemy.orm import mapper, relationship  # noqa: F401
-import architecture_patterns_python.model as model  # the ORM imports (depends/knows about) the domail model, not the other way around
+from sqlalchemy.orm import registry
+from architecture_patterns_python.model import (
+    OrderLine,
+)  # the ORM imports (depends/knows about) the domail model, not the other way around
+
+mapper_registry = registry()
 
 metadata = MetaData()
 
@@ -17,4 +21,5 @@ order_lines = Table(  # We define our databases tables and columns by using SQLA
 # When called, the mapper function does its magic to bind our domain model classes
 # to the various tables we defined
 def start_mappers():
-    lines_mapper = mapper(model.OrderLine, order_lines)
+    # lines_mapper = mapper_registry.map_declaratively(model.OrderLine, order_lines)
+    mapper_registry.map_imperatively(OrderLine, order_lines)
