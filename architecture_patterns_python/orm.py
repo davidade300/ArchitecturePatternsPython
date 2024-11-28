@@ -8,10 +8,7 @@ from sqlalchemy import (
     Table,
 )
 from sqlalchemy.orm import registry, relationship
-from architecture_patterns_python.model import (
-    Batch,
-    OrderLine,
-)  # the ORM imports (depends/knows about) the domail model, not the other way around
+from architecture_patterns_python.model import Batch, OrderLine
 
 mapper_registry = registry()
 

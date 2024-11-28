@@ -24,6 +24,10 @@ Temporary Items
 .apdisk
 a.html
 
+assets
+assets/
+assets/*
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/*
